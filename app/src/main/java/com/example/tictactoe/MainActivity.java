@@ -60,7 +60,23 @@ public class MainActivity extends AppCompatActivity {
 
                     layout.setVisibility(View.VISIBLE);
 
+                } else {
+                    boolean gameOver = true;
 
+                    for (int counterState : gameState) {
+                        if (counterState == 2) gameOver = false;
+                    }
+
+                    if (gameOver) {
+                        TextView winnerMessage = (TextView) findViewById(R.id.winnerMessage);
+
+                        winnerMessage.setText("Y'all Suck XD");
+
+                        LinearLayout layout = (LinearLayout) findViewById(R.id.playAgainLayout);
+
+                        layout.setVisibility(View.VISIBLE);
+
+                    }
                 }
             }
 
